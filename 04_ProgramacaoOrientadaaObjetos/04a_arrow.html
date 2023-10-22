@@ -1,0 +1,31 @@
+<title> Exemplos de construção arrow function   </title>
+<h1> Exemplos de construção arrow function     </h1>
+<script>
+// 04a_arrow  
+
+    var somar = () => document.write("Função sem parâmetros Arrow function "+"<br>\n");
+	somar();
+	somar(1);
+	
+    somar = _ => document.write("Função sem parâmetros Arrow function "+"<br>\n");
+	somar();
+	
+	somar = (x,y) => x+y;
+	document.write("Somar usando arrow function 1+2  = "+somar(1,2)+"<br>\n");
+	
+	somar = (x,y) => { return x+y}; 
+	document.write("Somar usando arrow function 3+4 = "+somar(3,4)+"<br>\n");
+	
+	somar = (x,y) => x>y?x:y; // se x > y então retorna x, caso contrario retorna y 
+	document.write("Somar usando arrow function 5+6 = "+somar(5,6)+"<br>\n");
+	
+	somar = (x,y) => {
+	  if (x>y) 
+	     return x
+	  else
+	     return y 
+	};
+	document.write("Somar usando arrow function 7>8 retorna não = "+somar(7,8)+"<br>\n");
+	document.write("Somar usando arrow function 8>7 retorna sim = "+somar(8,7)+"<br>\n");
+	
+</Script>

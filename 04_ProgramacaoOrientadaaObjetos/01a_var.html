@@ -1,0 +1,34 @@
+<title> Exemplos de var, let e const </title>
+<h1> Exemplos de var, let e const   </h1>
+<script>
+// 01a_var.js
+  
+    function testeVar(){
+	var var01 = "var 01";
+	{
+	     var var02 = "var 02";
+         document.write("Variável 01 -  "+var01+"<br>\n");
+         document.write("Variável 02 -  "+var02+"<br>\n");	
+    };
+    document.write("Variável 01 -  "+var01+"<br>\n");
+    document.write("Variável 02 -  "+var02+"<br>\n");
+	
+	};
+    
+	function testeVar2(){
+	var var03 = "var 01";
+	{
+	     document.write("Variável 01 -  "+var03+"<br>\n");
+	     var var03 = "var 02";
+         document.write("Variável 02 -  "+var03+"<br>\n");
+    };
+    var var03 = "var 03";
+    document.write("Variável 03 -  "+var03+"<br>\n");
+	
+	};
+    
+	
+	testeVar();
+	testeVar2();
+	
+</Script>

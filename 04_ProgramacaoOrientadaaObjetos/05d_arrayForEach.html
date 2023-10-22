@@ -1,0 +1,42 @@
+<title> Exemplos de funções de alta ordem   </title>
+<h1> Exemplos de funções de alta ordem     </h1>
+<script>
+// 05d_arrayForEach ; array.reduce ; array.map 
+
+    array = [4,5,6,7,8,9,10];
+	array.forEach ( 
+	(nro) => document.write(nro+" -> "+ (nro%2==0? "par "+"<br>\n": "impar"+"<br>\n")) );
+	
+	
+	nroDivisores = (item) => {
+	  let ndiv=0;
+	  let divisor;
+	  for(divisor=1; divisor<=item; divisor++){
+//	    document.write("divisor =  "+divisor+"   ");
+//		document.write("nvid =  "+ndiv);
+	    if((item%divisor) == 0) {
+	        ndiv++
+	  	};
+	  };
+	  return ndiv;
+	};
+	
+	array.forEach( (nro) =>
+	document.write(nro+" -> nDividores de 1 até "+nro+" = " + "  "+nroDivisores(nro)+"<br>\n"));
+
+	let resultado =
+	array.reduce((acc, val) => acc+=(val%2==0)?val:0,0);
+	
+    regraPar = (item) => item%2 == 0; // Resto da divisão de item por 2
+	document.write("Numeros paers - "+array.filter(regraPar)+"  ");
+	document.write(" - A soma dos numeros pares é  "+resultado+"<br>\n");
+	
+	var newArray = array.map((item) => item *2);
+    document.write(array+"  Novo conjunto de dados (dobro) - "+newArray+"  ");
+
+	newArray = array.map( (item) => {return {x: item, y: 2*item}});
+
+    document.write("<br>\n"+array+"  Novo conjunto de dados x, y - "+"<br>\n");
+    document.write(newArray); // Esta mostrando Object Object 
+//	console.log(newArray); funciona no site
+</Script>

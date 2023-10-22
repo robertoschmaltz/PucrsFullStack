@@ -1,0 +1,27 @@
+<title> Criando Objetos - Criando atributos estaticos </title>
+<h1> Criando Objetos - Criando atributos estaticos   </h1>
+<script>
+/*
+     Atributos estaticos 
+	 
+*/
+   
+    class ValidadorCPF {
+          static validar(tamanho) {
+		      if (tamanho == 11) {
+			      return true;
+			  }
+			       return false;
+		  };
+	};
+	
+    const cpf1 = "1234567890";	
+	const cpf2 = "12345678901";
+	
+	document.write("O CPF "+cpf1+" possue "+cpf1.length+" caracteres"+"<br>\n");
+	document.write("O CPF "+cpf2+" possue "+cpf2.length+" caracteres"+"<br>\n");
+	
+    document.write("O CPF "+cpf1+" é  "+ValidadorCPF.validar(cpf1.length)+"<br>\n");
+	document.write("O CPF "+cpf2+" é  "+ValidadorCPF.validar(cpf2.length)+"<br>\n");
+
+</Script>

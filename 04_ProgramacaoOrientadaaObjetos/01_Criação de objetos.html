@@ -1,0 +1,42 @@
+<title> Criando Objetos - Primeira forma </title>
+<h1> Criando Objetos - Primeira forma  </h1>
+<script>
+/*
+     Objeto Date() retorna a data atual.
+	 metodo getFullYear retorna o ano
+
+*/   
+    var pessoa = {
+      nome:['José','Roberto'],
+	  anoDeNascimento:1961,
+	  profissao:'Engenheiro Civil',
+	  calculaIdade: function() {
+	     return new Date().getFullYear() - this.anoDeNascimento;
+		}
+    };
+  
+      document.write("O nome do artista é "+pessoa.nome+"<br>\n");   
+      document.write("Sua idade é "+pessoa.calculaIdade()+"<br>\n")  
+
+    const calculadora = { 
+        numero1:10,
+        numero2:20,
+        soma: function(){
+          return this.numero1 + this.numero2;
+        }
+    };
+  
+    document.write("A soma dos dois numeros é "+calculadora.soma()+"<br>\n");  
+  
+	const empregado = {
+	    salarioFixo: 5000,
+		valorHoraExtra: 100,
+		horasExtras: 20,
+		calculaSalario: function() {
+		   return this.salarioFixo + (this.valorHoraExtra * this.horasExtras);
+		}
+	};
+	
+    document.write("A soma dos dois numeros é "+empregado.calculaSalario()+"<br>\n");
+	
+</Script>

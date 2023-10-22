@@ -1,0 +1,26 @@
+<title> Criando Objetos - Criando objetos - FABRICA </title>
+<h1> Criando Objetos - Criando objetos - FABRICA  </h1>
+<script>
+/*
+     Criando Objetos - FABRICAS (Uso de funções 
+
+*/   
+    function criaPessoa(nome,anoDeNascimento, profissao){
+	   return {
+	        nome,
+			anoDeNascimento,
+            profissao,
+			calculaIdade: function() {
+			    return new Date().getFullYear() - this.anoDeNascimento;
+			}
+	   };
+	};
+	
+  
+	const pessoa = criaPessoa("Jose Roberto",1961,"Engenheiro");
+	
+    document.write("Dados do Objeto "+pessoa.nome+"<br>\n");
+	document.write("Dados do Objeto "+pessoa.anoDeNascimento+"<br>\n");
+	document.write("Dados do Objeto "+pessoa.profissao+"<br>\n");
+	document.write("Dados do Objeto "+pessoa.calculaIdade()+"<br>\n");
+</Script>

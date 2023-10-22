@@ -1,0 +1,93 @@
+<title> Criando Objetos - Criando objetos - CLASSES </title>
+<h1> Criando Objetos - Criando objetos - classes  </h1>
+<script>
+/*
+     Criando Objetos - CLASSES (Uso de funções 
+
+*/   
+    class Pessoa {
+	        constructor(nome,anoDeNascimento, profissao){
+	           this.nome = nome;
+			   this.anoDeNascimento = anoDeNascimento;
+               this.profissao = profissao;
+			};
+			ola(){
+			    document.write("Olá eu sou "+this.nome+"<br>\n");
+			};
+			calculaIdade() {
+			    return new Date().getFullYear() - this.anoDeNascimento;
+			};
+	};
+/*
+	class Estudante extends Pessoa {
+	        constructor(nome, anoDeNascimento, profissao, matricula){
+	           super(nome, anoDeNascimento, profissao);
+			   this.matricula = matricula;
+			};
+	};
+*/
+	class Estudante extends Pessoa {
+	// Proteção de variáveis - #matricula 
+	        constructor(nome, anoDeNascimento, matricula){
+	           super(nome, anoDeNascimento, "Estudante");
+			   // proteção de variável this.#matricula = matricula;
+			   this.matricula = matricula;
+			   // chamando o objeto internamente - this.#ola();
+			};
+/*
+			   uso de Herança - Polimorfismo (Sobrescrita)
+			   Uso de get e set (Getter e setter) encapsular/proteger/isolar propriedades
+			   getMatricula(){
+			      return this.#matricula;
+			   };
+			   SetMatricula(valor) {
+			      this.#matricula = valor;
+			   };
+				  
+*/
+			ola() {
+			// Proteção de metodo - somente o proprio objeto pode executar(Ver acima)  #ola() { 
+			    super.ola();
+				document.write("Sou um estudante"+"<br>\n");
+			};
+	};
+	
+	class Professor extends Pessoa {
+	        constructor(nome, anoDeNascimento, titulacao){
+	           super(nome, anoDeNascimento, "Professor");
+			   this.titulacao = titulacao;
+			};
+	};
+	const pessoa = new Pessoa("Jose Roberto",1961,"Engenheiro");
+	const pessoa1 = new Pessoa("Pedro Roberto",1960,"Advogado");
+	
+	const aluno1 = new Estudante("Manuel Ferreira",1975, 2112);
+
+    const prof1 = new Professor("Alexandre PUC",1972, "Mestrado");
+	
+    pessoa.ola();
+	document.write("Nome "+pessoa.nome+"<br>\n");
+	document.write("Ano de nascimento "+pessoa.anoDeNascimento+"<br>\n");
+	document.write("Profissão "+pessoa.profissao+"<br>\n");
+	document.write("Idade  "+pessoa.calculaIdade()+"<br>\n");
+	pessoa1.ola();
+	document.write("Nome "+pessoa1.nome+"<br>\n");
+	document.write("Ano de nascimento "+pessoa1.anoDeNascimento+"<br>\n");
+	document.write("Profissão "+pessoa1.profissao+"<br>\n");
+	document.write("Idade "+pessoa1.calculaIdade()+"<br>\n");
+	
+	aluno1.ola();
+	document.write("Nome "+aluno1.nome+"<br>\n");
+	document.write("Ano de nascimento "+aluno1.anoDeNascimento+"<br>\n");
+	document.write("Profissão "+aluno1.profissao+"<br>\n");
+	document.write("Idade "+aluno1.calculaIdade()+"<br>\n");
+	document.write("Matricula "+aluno1.matricula+"<br>\n");
+	
+	prof1.ola();
+	document.write("Nome "+prof1.nome+"<br>\n");
+	document.write("Ano de nascimento "+prof1.anoDeNascimento+"<br>\n");
+	document.write("Profissão "+prof1.profissao+"<br>\n");
+	document.write("Idade "+prof1.calculaIdade()+"<br>\n");
+	document.write("Titulação "+prof11.titulacao+"<br>\n");
+
+</Script>

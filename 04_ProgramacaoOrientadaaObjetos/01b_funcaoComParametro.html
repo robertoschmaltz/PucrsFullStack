@@ -1,0 +1,20 @@
+<title> Exemplos de funções que recfebem parâmetros  </title>
+<h1> Exemplos de funções que recfebem parâmetros   </h1>
+<script>
+// 01b_funcaoComParametro 
+  
+    function potencia(base, expoente = 2){
+	   let resultado = 1; 
+	   for (let cont = 0; cont < expoente; cont++) {
+	        resultado *= base; // resultado = resultado * base
+	   };
+	return resultado;
+	};
+	
+	document.write("Potencia() -  "+potencia()+"<br>\n");
+	document.write("Potencia(4) -  "+potencia(4)+"<br>\n");
+	document.write("Potencia(2,6) -  "+potencia(2,6)+"<br>\n");
+	document.write("Potencia(2,6,18) -  "+potencia(2,6,18)+"<br>\n");
+//	
+	
+</Script>

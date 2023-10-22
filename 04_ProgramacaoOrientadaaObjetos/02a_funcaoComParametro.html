@@ -1,0 +1,43 @@
+<title> Exemplos de funções manipulaveis   </title>
+<h1> Exemplos de funcoes manipulaveis    </h1>
+<script>
+// 02a_funcaoComParametro 
+  
+    function decision(question, doOk, doCancel){
+	   if (question=="OK") 
+	      doOk()
+	    else 
+	      doCancel();	   
+	};
+	function showOk() { 
+	   document.write("You Agreed "+"<br>\n");
+	};
+	function showCancel() { 
+	   document.write("You canceled the execution "+"<br>\n");
+	};
+	decision("OK", showOk,showCancel);
+	decision("Cancel",showOk,showCancel);
+	
+/*
+   >>> Nao declara as funcoes e chama a funcao decision passando as funcoes
+   decision(
+   "OK", 
+   function () { document.write("You Agreed "+"<br>\n"); },
+   function () { document.write("You canceled the execution "+"<br>\n"); }, 
+   );
+   decision(
+   "Cancel", 
+   function () { document.write("You Agreed "+"<br>\n"); },
+   function () { document.write("You canceled the execution "+"<br>\n"); }, 
+   ); 
+   
+   
+   >>> colocando as funcoes em uma variável e passando as variáveis
+   let beOk = function showOk() { document.write("You Agreed "+"<br>\n"); };
+   let beCancel = function showCancel() { document.write("You canceled the execution "+"<br>\n"); };   
+   decision("OK",beOk, beCancel);
+   decision("Cancel",beOk, beCancel);   
+   
+*/	
+	
+</Script>

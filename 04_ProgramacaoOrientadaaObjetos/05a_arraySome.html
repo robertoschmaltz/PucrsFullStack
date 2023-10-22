@@ -1,0 +1,35 @@
+<title> Exemplos de funções de alta ordem   </title>
+<h1> Exemplos de funções de alta ordem     </h1>
+<script>
+// 05a_arraySome  (some = algum); array.every; array.filter
+
+    array = [4,5,6,7,8,9,10];
+	regraImpar = (item) => item%2 != 0; // Resto da divisão de item por 2
+    document.write("Há algum numero impar ? "+array.some(regraImpar)+"<br>\n");
+	
+	regraImpar = (item) => item%2 != 0; // Resto da divisão de item por 2
+    document.write("Todos os numeros são impar  ? "+array.every(regraImpar)+"<br>\n");
+	document.write("Estes são os numeros impares "+array.filter(regraImpar)+"<br>\n");
+	
+	regraPrimo = (item) => { 
+	  let ndiv=0;
+	  let divisor;
+	  for(divisor=1; divisor<=item; divisor++){
+	    document.write("divisor =  "+divisor+"<br>\n");
+		document.write("nvid =  "+ndiv+"<br>\n");
+	    if((item%divisor) == 0) {
+	        ndiv++
+	  	};
+	  };
+	  if(ndiv==2)
+	    return true;
+	  else
+	    return false;
+	};
+	
+	document.write("Há algum numero primo ? "+array.some(regraPrimo)+"<br>\n");
+	document.write("Todos os numeros são primo ? "+array.every(regraPrimo)+"<br>\n");
+	document.write("Estes são os numeros primos "+array.filter(regraPrimo)+"<br>\n");
+	
+	
+</Script>
