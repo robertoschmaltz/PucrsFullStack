@@ -1,0 +1,103 @@
+<title> Gerador de Lançamentos do Sistema! </title>
+<h1> Gerador de Lançamentos do Sistema! </h1>
+<h1> </h1>
+
+<script>
+/ Tabela de GRUPOS
+// Variáveis conforme grupo adquirido
+
+var taxadeJurosaplicada = 0.125;
+var aplicaCorrecaoMonetaria = true;  
+numerodeMesesdeAplicacaosomentedejuros = 6;
+var prazoTotal = 48;
+var numerodeMesesdeAplicacaosomentedejuros;
+var aplicaamortizacaodoPrincipalmensal = true;
+var percentualdeaplicacaodeamortizacao = 0.40;
+// Taxa de corretagem aplicada
+                      
+// Tabela de CLIENTE FAZ COMPRA
+// Variáveis conforme Cliente e Grupo adquirido
+
+var datadaaquisicao =  new Date(2023,7,11);
+var quantidadedeTokensAdquiridos = 10; 
+var valoremtki = 1000;
+// CódigodoFornecedorafiliado
+
+var datadolancamento = new Date(2023,7,11);
+var descricaodolancamento = '';
+var valordoLancamento = 0.0000;
+var creditoDebito = "C";
+var amortizacaoMensal = 0.0000;
+// 	var amortizacaoMensal = 0.0000
+// 	var aercentualdeaplicacaodeamortização = 0.0000;
+
+document.write(datadolancamento + "  "+descricaodolancamento +"  " + valordoLancamento + "  " + creditoDebito);
+
+// Bonificação mensal fixa
+
+var taxadeJurosaplicadaMensal = (1+ taxadeJurosaplicada)^(1/12) -1;
+var bonificacaoMensal = valoremtki * taxadeJurosaplicadaMensal;
+if (aplicaamortizacaodoPrincipalmensal) {  
+      	 amortizacaoMensal = valoremtki * percentualdeaplicacaodeamortizacao/
+          (prazoTotal - numerodeMesesdeAplicacaosomentedejuros);
+}
+var principal = valoremtki;
+var mes = 1;
+while (mes <= prazoTotal) {  
+	if (aplicaamortizacaodoPrincipalmensal) { 
+		if (mes <= numerodeMesesdeAplicacaosomentedejuros) { 
+			// Neste caso teremos apenas a Bonificação.
+			datadolancamento = datadaaquisicao.setMonth(datadaaquisicao.getMonth() + mes);
+			descricaodolancamento = 'Bonificação mensal'  + ' Parcela '+mes+'.'+prazoTotal;
+			creditoDebito = 'C';
+			valordoLancamento = bonificacaoMensal;
+			imprime(); }
+	      else {
+			// Lançamento da Amortização.
+			datadolancamento = datadaaquisicao.setMonth(datadaaquisicao.getMonth() + mes);
+			descricaodolancamento = 'Amortização mensal' + ' Parcela'+mes+'.'+prazoTotal;
+			creditoDebito = 'C';
+			valordoLancamento = amortizacaoMensal;
+			imprime(); 
+
+			// Lançamento da Bonificação.
+			principal = principal - amortizacaoMensal;
+			bonificacaoMensal = principal * taxadeJurosaplicadaMensal; 
+			descricaodolancamento = 'Bonificação mensal'  + ' Parcela '+mes+'.'+prazoTotal;
+			creditoDebito = 'C';
+			valordoLancamento = bonificacaoMensal; 
+			imprime(); } 
+		}
+
+	else {
+		// Neste caso teremos apenas a Bonificação.
+		datadolancamento = datadaaquisicao.setMonth(datadaaquisicao.getMonth() + mes);
+// Lançamento da Bonificação.
+		bonificaçãoMensal = principal * taxadeJurosaplicadaMensal; 
+		descricaodolancamento = 'Bonificação mensal'  + ' Parcela '+mes+'.'+prazoTotal;
+		creditoDebito = 'C';
+		valordoLancamento = bonificacaoMensal; 
+		imprime(); } 
+    mes = mes +1
+} 
+// Grava ultimo lançamento de quitação	
+mes = mes +1
+descricaodolancamento = 'Liquidação total'  + ' Parcela Final '+mes
+creditoDebito = 'C'
+valordoLancamento = bonificacaoMensal 
+imprime()  
+
+function imprime() { 
+    document.write(datadolancamento + "  "+descricaodolancamento +"  " + valordoLancamento + "  " + creditoDebito);
+
+}
+
+
+</script>
+
+
+
+
+
+
+

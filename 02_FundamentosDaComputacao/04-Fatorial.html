@@ -1,0 +1,32 @@
+<title> Fatorial normal! </title>
+<h1> Calculo de fatorial  </h1>
+<p> Teste de parágrafo </p>
+<script>
+/*
+     Calculo de fatorial normal
+*/
+
+function fatorial(number){
+     if (number < 0)
+	    return undefined; 
+     // else
+	 let total = 1;
+	 for (let n = number;n >1; n--)
+	      total = total * n;
+		  
+	  return total;	  
+}
+
+ document.write("Fatorial de "+5+" = "+fatorial(5)+"<br>\n")
+ 
+ function fatorialRecursivo(f){
+       if (f === 1 || f ===0)
+	      return 1;
+		  
+		return f * fatorialRecursivo(f-1);	
+ 
+ }
+ 
+ document.write("Fatorial recursivo"+"<br>\n")
+ document.write("Fatorial de "+5+" = "+fatorialRecursivo(5)+"<br>\n")
+</Script>

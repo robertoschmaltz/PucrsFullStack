@@ -1,0 +1,45 @@
+<title> Programa que calcula o custo de uma corrida de uber! </title>
+<h1> Programa que calcula o custo de uma corrida de uber! </h1>
+<h1> </h1>
+<script>
+document.write("Forneca a distancia a ser percorrida em KM"); 
+</script>
+<input placeholder = "Distancia" id="DistanciaColetada"/>
+<h1> </h1>
+<script>
+document.write("Forneca o tempo da corrida em minutos"); 
+</script>
+<input placeholder = "Tempo" id="TempoColetado"/>
+<h1> </h1>
+<button onclick="calculaCorrida()">Calcula </button>
+<h1> </h1>
+
+<script>
+function formataMoeda(ValorEntrada){
+var valorFormatado = ValorEntrada.toFixed(2).replace('.',',');
+return valorFormatado; 	
+}
+function calculaCorrida() { 
+// Organizar as entradas e regras do negócio
+var tarifaDinamicaDistancia = 1.4;
+var tarifaDinamicaTempo = 0.26;
+// var TempoColetado = 5.0;
+// var DistanciaColetada = 10.0;
+var valorDistanciaEmKm = DistanciaColetada.value * tarifaDinamicaDistancia; 
+var valorTempoEmMinutos = TempoColetado.value * tarifaDinamicaTempo;
+var valorDaCorrida = valorDistanciaEmKm + valorTempoEmMinutos;
+
+document.write("O valor da corrida e : R$" + formataMoeda(valorDaCorrida));
+}
+
+/*
+# App de calculo de valores de corrida no uber
+Preco base da Corrida
+Custo fixo
+Horários e regiões de maior movimento
+
+- distancia
+- tempo em minutos
+*/
+
+</script>

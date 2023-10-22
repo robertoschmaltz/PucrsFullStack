@@ -1,0 +1,22 @@
+<script>
+/*
+     Calculo de fatorial normal
+*/
+
+function doSomething(value){
+     if(value==0)
+	    return 0;
+	  else
+	  return value+doSomething(value - 1);
+  }
+ document.write("Numero"+"<br>\n")
+ document.write("Numero="+doSomething(3))
+ var x=0;
+ var n=0;
+ while (n<3) {
+        n=n+1
+		x=n+x
+ }
+ document.write("<br>\n"+"Teste 4"+"<br>\n")
+ document.write("Teste 4="+x)
+</script>

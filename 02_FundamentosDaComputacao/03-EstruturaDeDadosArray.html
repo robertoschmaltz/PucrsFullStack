@@ -1,0 +1,82 @@
+<title> Uso da Estrutura de Dados - Array! </title>
+<h1> Programa Uso da Estrutura de Dados - Array!  </h1>
+<script>
+/*
+     length - retorna o numero de elementos
+	 push - adiciona elemento na ultima posição
+	 pop - remove ultimo elemento 
+	 shift - remove primeiro elemento
+	 unshuft - adiciona elemento na primeira posição
+	 splice - adiciona elemento em posição específica
+	 slice - retorna uma copia do array
+	 at(pos) ou [pos] - retorna o elemento da posição pos
+*/   
+   let numeroDeTermos = 21;
+   document.write("Metodo 1  "+"<br>\n")
+
+       let diaDaSemana = []; //{1}
+       document.write("dias da semana  "+diaDaSemana+"<br>\n")
+       diaDaSemana = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado',  'Domingo'] 
+	   document.write("dias da semana  "+diaDaSemana+"<br>\n")
+        for(let i=0; i<7;i++){
+			   document.write("dia da semana  "+diaDaSemana[i]+"<br>\n")
+		}
+          
+
+   document.write("Metodo 2  "+"<br>\n")
+
+      let diaDaSemana2 = new Array(7); //{1}
+      document.write("dias da semana  "+diaDaSemana2+"<br>\n")
+      diaDaSemana2 = new Array('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo') 
+      document.write("dias da semana  "+diaDaSemana2+"<br>\n")
+	   for(let i=0; i<7;i++){
+	 	   document.write("dia da semana  "+diaDaSemana2[i]+"<br>\n")
+		   // document.write("dia da semana  "+diaDaSemana(i)+"<br>\n") Por alguma razão não funciona o parentese
+	 	}
+          
+	document.write("Fibonatti  "+"<br>\n")
+
+      const fibonatti = [];
+	  fibonatti[1] = 1;
+	  fibonatti[2] = 1;
+	  document.write("Fibonatti elemento "+1+"  ="+fibonatti[1]+"<br>\n")
+      document.write("Fibonatti elemento "+2+"  ="+fibonatti[2]+"<br>\n")
+	  
+	  for(let i=3; i<numeroDeTermos;i++){
+	       fibonatti[i] = fibonatti[i-1] + fibonatti[i-2]
+	 	   document.write("Fibonatti elemento "+i+"  ="+fibonatti[i]+"<br>\n")
+		   
+	  }
+            
+	document.write("Array - Matrizes  "+"<br>\n")
+
+ 
+      // var MatrizBlocoCinco = [4][5]; ou   [4,5] ou	new array(4,5) ou 
+      // var MatrizBlocoCinco = []; 
+	  // MatrizBlocoCinco[0] = [];           não funcionam
+	  
+	  var MatrizBlocoCinco = [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]]; 
+	  let k = 1;
+	  for(let i=0; i<4;i++){
+	       for(let j=0; j<5;j++){
+                 document.write("Elemento "+(i+1)+" "+(j+1)+"  ="+fibonatti[k]+"<br>\n")
+	             MatrizBlocoCinco[i][j] = fibonatti[k];
+			  k++;
+		   }
+	  } 
+	  document.write("Matriz  "+MatrizBlocoCinco+"<br>\n")
+/*	  
+      Não funcionou o programa abaixo
+	  document.write("Set - Matrizes  "+"<br>\n")
+	  
+	  var mySet = new Set()
+	  mySet.add(0)
+	  document.write("Meu Set - Matrizes  "+mySet+"<br>\n")
+	  mySet.add(1)
+	  document.write("Meu Set - Matrizes  "+mySet+"<br>\n")
+	  mySet.add(2)
+	  document.write("Meu Set - Matrizes  "+mySet+"<br>\n")
+	  mySet.add(1)
+	  document.write("Meu Set - Matrizes  "+mySet+"<br>\n")
+*/	  
+</Script>
