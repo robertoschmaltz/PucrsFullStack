@@ -1,0 +1,9 @@
+docker build -t schmaltzcba/conversao-temperatura:v1 .
+docker tag schmaltzcba/conversao-temperatura:v1 schmaltzcba/conversao-temperatura:latest
+docker push schmaltzcba/conversao-temperatura:v1
+docker push schmaltzcba/conversao-temperatura:latest
+
+Listar - Docker image ls 
+Rodar - docker container run -d -p 8080:8080 schmaltzcba/conversao-temperatura:v1 
+Mostrar quem esta rodando - docker container ls 
+https://amaurybsouza.medium.com/docker-parte-1-principais-comandos-para-gerenciar-seus-containers-94ca761cb7a1
